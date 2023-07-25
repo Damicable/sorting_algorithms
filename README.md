@@ -119,7 +119,9 @@ Write in the file 0-O, the big O notations of the time complexity of the Bubble 
 in the best case
 in the average case
 in the worst case
+
 alex@/tmp/sort$ cat 0-main.c 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
@@ -186,7 +188,9 @@ Write in the file 1-O, the big O notations of the time complexity of the Inserti
 in the best case
 in the average case
 in the worst case
+
 alex@/tmp/sort$ cat 1-main.c
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
@@ -287,7 +291,9 @@ Write in the file 2-O, the big O notations of the time complexity of the Selecti
 in the best case
 in the average case
 in the worst case
+
 alex@/tmp/sort$ cat 2-main.c
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
@@ -342,7 +348,9 @@ Write in the file 3-O, the big O notations of the time complexity of the Quick s
 in the best case
 in the average case
 in the worst case
+
 alex@/tmp/sort$ cat 3-main.c
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
@@ -396,6 +404,7 @@ You’re expected to print the array each time you decrease the interval (See ex
 No big O notations of the time complexity of the Shell sort (Knuth sequence) algorithm needed - as the complexity is dependent on the size of array and gap
 
 alex@/tmp/sort$ cat 100-main.c
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
@@ -443,7 +452,9 @@ Write in the file 101-O, the big O notations of the time complexity of the Cockt
 in the best case
 in the average case
 in the worst case
+
 alex@/tmp/sort$ cat 101-main.c
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
@@ -547,7 +558,9 @@ Write in the file 102-O, the big O notations of the time complexity of the Count
 in the best case
 in the average case
 in the worst case
+
 alex@/tmp/sort$ cat 102-main.c
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
@@ -599,6 +612,7 @@ in the best case
 in the average case
 in the worst case
 alex@/tmp/sort$ cat 103-main.c
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
@@ -680,7 +694,9 @@ Write in the file 104-O, the big O notations of the time complexity of the Heap 
 in the best case
 in the average case
 in the worst case
+
 alex@/tmp/sort$ cat 104-main.c
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
@@ -750,7 +766,9 @@ You must implement the LSD radix sort algorithm
 You can assume that array will contain only numbers >= 0
 You are allowed to use malloc and free for this task
 You’re expected to print the array each time you increase your significant digit (See example below)
+
 alex@/tmp/sort$ cat 105-main.c
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
@@ -800,7 +818,9 @@ Write in the file 106-O, the big O notations of the time complexity of the Biton
 in the best case
 in the average case
 in the worst case
+
 alex@/tmp/sort$ cat 106-main.c
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
@@ -907,7 +927,9 @@ Write in the file 107-O, the big O notations of the time complexity of the Quick
 in the best case
 in the average case
 in the worst case
+
 alex@/tmp/sort$ cat 107-main.c
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
@@ -1042,7 +1064,9 @@ The deck must be ordered:
 From Ace to King
 From Spades to Diamonds
 See example below
+
 alex@/tmp/sort$ cat 1000-main.c
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "deck.h"
