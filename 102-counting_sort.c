@@ -1,53 +1,68 @@
 #include "sort.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 /**
-  * counting_sort - This is function that sorts an array using
-  * counting algorithm.
-  * @array: The array to sort.
-  * @size: The length of the array.
-  * Return: Nothing.
-  */
+ * maximum - This gets the maximun value of an array of integers
+ * @array: the array to get the maximum value of
+ * @size: Array size.
+ * Return: The maximum value of all the array elements
+ */
+
+int maximum(int *array, size_t size)
+{
+	int max = array[0];
+	size_t i;
+
+	for (i = 1; i < size; i++)
+		max = (array[i] > max) ? array[i] : max;
+	return (max);
+}
+
+/**
+ * counting_sort - This sorts an arrays of integers in an ascending order
+ *                 using the counting sort algorithm
+ *@array: The array to sort
+ *@size: The array size
+ */
 void counting_sort(int *array, size_t size)
 {
-	unsigned int i = 1;
-	int *counter = NULL, k = 0, j = 0;
+	int *countingArr = NULL, *newArr = NULL, max;
+	size_t i, k, Max;
+
 
 	if (array == NULL || size < 2)
 		return;
 
-	k = array[0];
-	for (; i < size; i++)
-	{
-		if (array[i] > k)
-			k = array[i];
-	}
+	max = maximum(array, size);
 
-	counter = malloc(sizeof(int) * (k + 1));
-	if (counter == NULL)
+	countingArr = (int *) malloc(sizeof(int) * (max + 1));
+	if (!countingArr)
 		return;
-
-	for (j = 0; j <= k; j++)
-		counter[j] = 0;
+	newArr = (int *) malloc(sizeof(int) * size);
+	if (!newArr)
+		return;
+	Max = max + 1;
+	for (k = 0; k < Max; k++)
+		countingArr[k] = 0;
 	for (i = 0; i < size; i++)
-		counter[array[i]] += 1;
-	for (j = 0; j < k; j++)
+		countingArr[array[i]]++;
+	k = 1;
+	while (k < Max)
 	{
-		counter[j + 1] += counter[j];
-		printf("%d, ", counter[j]);
+		countingArr[k] += countingArr[k - 1];
+		k++;
 	}
-	counter[j + 1] += counter[j];
-	printf("%d\n", counter[j + 1]);
+	print_array(countingArr, Max);
+	k--;
+	while (k > 0)
+	{
+		countingArr[k] = countingArr[k - 1];
+		k--;
+	}
+	countingArr[0] = 0;
 	for (i = 0; i < size; i++)
-	{
-		j = counter[array[i]] - 1;
-		if (array[i] != array[j])
-		{
-			k = array[i];
-			array[i] = array[j];
-			array[j] = k;
-		}
-	}
-	free(counter);
+		newArr[countingArr[array[i]]++] = array[i];
+	for (i = 0; i < size; i++)
+		array[i] = newArr[i];
+	free(newArr);
+	free(countingArr);
 }
