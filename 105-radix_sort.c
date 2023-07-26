@@ -1,7 +1,7 @@
 #include "sort.h"
 #include "102-counting_sort.c"
 /**
- * counting_s - This function handles the counting sort based on the
+ * counting_s - This function does the counting sort based on the
  * significant digit.
  * @array: A pointer to the array of integers.
  * @size: Size of the array.
@@ -40,7 +40,7 @@ void counting_s(int *array, size_t size, int exp)
  * radix_sort - This function sorts an array of integers in ascending
  * order using Radix sort.
  * @array: A pointer to the array of integers to be sorted.
- * @size: Size of the array.
+ * @size: Number of elements in the array.
  */
 void radix_sort(int *array, size_t size)
 {

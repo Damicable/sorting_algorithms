@@ -1,9 +1,9 @@
 #include "deck.h"
 /**
  * swap_cards - This function swaps two cards from a deck of cards.
- * @deck: Doubly linked list representing the cards deck
- * @card_1: The node on the left
- * @card_2: The node on the right
+ * @deck: a doubly linked list representing the cards deck
+ * @card_1: the node on the left
+ * @card_2: the node on the right
  */
 void swap_cards(deck_node_t **deck, deck_node_t *card_1, deck_node_t *card_2)
 {
@@ -20,16 +20,16 @@ void swap_cards(deck_node_t **deck, deck_node_t *card_1, deck_node_t *card_2)
 }
 
 /**
- * dummyVal - This function assignes a dummy values to the cards to help
- * sorting the cards we choose to add:
- * => Nothing to Spade cards, Spade range is [1 - 13]
- * =>  20 to Heart cards, Heart range is [21 - 33]
- * =>  40 to Club cards, Club range is [41 - 43]
- * =>  60 to Diamond cards, Diamond range is [61 - 73]
+ * dummyVal - assignes a dummy values to the cards to help sorting the cards
+ *             We choose to add:
+ *             => Nothing to Spade cards, Spade range is [1 - 13]
+ *             =>  20 to Heart cards, Heart range is [21 - 33]
+ *             =>  40 to Club cards, Club range is [41 - 43]
+ *             =>  60 to Diamond cards, Diamond range is [61 - 73]
  *
- *@node: Card to check
+ *@node: The card to check
  *
- *Return: An integer from 1 to 73
+ *Return: an integer from 1 to 73
  */
 int dummyVal(deck_node_t *node)
 {
@@ -61,16 +61,12 @@ int dummyVal(deck_node_t *node)
 	case DIAMOND:
 		dummy = value + 60;
 		break;
-	default:
-		dummy = value;
-		break;
 	}
 	return (dummy);
 }
 /**
- * sort_deck - This is a function that sorts a deck of cards From Ace
- * to King - From Spades to Diamonds
- * @deck: Double pointer to the deck of cart to be sorted
+ * sort_deck - sorts a deck of cards From Ace to King - From Spades to Diamonds
+ * @deck: double pointer to the deck of cart to be sorted
  */
 void sort_deck(deck_node_t **deck)
 {
@@ -88,7 +84,6 @@ void sort_deck(deck_node_t **deck)
 			if (dummyVal(cursor) > dummyVal(cursor->next))
 			{
 				swap_cards(deck, cursor, cursor->next);
-				cursor = cursor->prev;
 			}
 			else
 				cursor = cursor->next;
@@ -100,7 +95,7 @@ void sort_deck(deck_node_t **deck)
 			if (dummyVal(cursor) < dummyVal(cursor->prev))
 			{
 				swap_cards(deck, cursor->prev, cursor);
-				cursor = cursor->next;
+
 			}
 			else
 				cursor = cursor->prev;

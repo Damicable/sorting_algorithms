@@ -1,6 +1,7 @@
 #ifndef __SORT__
 #define __SORT__
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * struct listint_s - Doubly linked list node
@@ -19,6 +20,12 @@ typedef struct listint_s
 /*=================        Printing Algoritms        ==================*/
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
+
+
+/*________ Helper functions _______________*/
+
+void swap(int *a, int *b);
+int maximum(int *array, size_t size);
 
 
 /*================         sorting Algoritms        ==================*/

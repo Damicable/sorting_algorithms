@@ -1,5 +1,5 @@
-#ifndef DECK_H
-#define DECK_H
+#ifndef __DECK__
+#define __DECK__
 
 #include <stdlib.h>
 #include <stdio.h>

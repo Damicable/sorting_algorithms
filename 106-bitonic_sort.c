@@ -1,9 +1,9 @@
 #include "sort.h"
 
 /**
- * swap - This is a function that swaps two integers.
- * @a: The first integer to be swapped.
- * @b: The second integer to be swapped.
+ * swap - swaps two integers.
+ * @a: the first integer to be swapped.
+ * @b: the second integer to be swapped.
  */
 void swap(int *a, int *b)
 {
@@ -18,12 +18,13 @@ void swap(int *a, int *b)
 }
 
 /**
- * bitonic_updown - This divides the subarray into two halves and
- * compares elements from each half to sort them in the specified
- * order (ascending or descending) subarray.
+ * bitonic_updown - divides the subarray into two halves and compares elements
+ *                   from each half to sort them in the specified order
+ *                   (ascending or descending).
+ *                   subarray.
  * @ascend: If 1, sort in ascending order; if 0, sort in descending order.
- * @subarray: A pointer to the current subarray to be sorted
- * @subsize: Size of subarray.
+ * @subarray: pointer to the current subarray to be sorted
+ * @subsize: the subarray size.
  */
 void bitonic_updown(int ascend, int *subarray, size_t subsize)
 {
@@ -42,12 +43,11 @@ void bitonic_updown(int ascend, int *subarray, size_t subsize)
 }
 
 /**
- * bitonic_merge -  This function merges two sorted subarrays into a
- * larger sorted subarray.
+ * bitonic_merge -  Merges two sorted subarrays into a larger sorted subarray.
  * @ascend: if 1, sort in ascending order; if 0, sort in descending order.
- * @subarray: A pointer to the previous subarray.
- * @subsize: Size of subarray.
- * @size: Size of the array.
+ * @subarray: pointer to the previous subarray.
+ * @subsize: the subarray size.
+ * @size: The array size.
  */
 void bitonic_merge(int ascend, int *subarray, size_t subsize, size_t size)
 {
@@ -65,15 +65,15 @@ void bitonic_merge(int ascend, int *subarray, size_t subsize, size_t size)
 }
 
 /**
- * bitonic_recursive - This recursively divides the array into subarrays
- * untill each subarray has a size of 1 and sort them in the specified
- * order (ascending or descending)before merging them back into
- * larger sorted subarrays.
+ * bitonic_recursive - Recursively divides the array into subarrays until
+ *                     each subarray has a size of 1 and sorts them
+ *                     in the specified order (ascending or descending)before
+ *                     merging them back into larger sorted subarrays.
  *
  * @ascend: If 1, sort in ascending order; if 0, sort in descending order.
  * @subarray: A pointer to the current subarray to be sorted.
  * @subsize: Subarray size.
- * @size: Size of source array being sorted.
+ * @size: Number of elements in the source array being sorted.
  */
 void bitonic_recursive(int ascend, int *subarray, size_t subsize, size_t size)
 {
@@ -101,8 +101,8 @@ void bitonic_recursive(int ascend, int *subarray, size_t subsize, size_t size)
 }
 
 /**
- * bitonic_sort - This function sorts an array of integers in
- * ascending order using a bitonic sort algorithm.
+ * bitonic_sort - This sorts an array of integers in ascending order
+ *                using a bitonic sort algorithm.
  * @array: Array of values to be sorted.
  * @size: Number of elements in the array.
  */
