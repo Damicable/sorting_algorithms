@@ -2,6 +2,8 @@
 #define __DECK__
 
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 /**
   * enum kind_e - deck's kind.
